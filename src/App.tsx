@@ -1,12 +1,7 @@
 import { useState } from 'react';
 import { Check, ChevronDown, CheckCircle2, MessageCircle } from 'lucide-react';
 
-declare global {
-  interface Window {
-    fbq: any;
-    _fbq: any;
-  }
-}
+
 
 export default function App() {
   const [checks, setChecks] = useState([false, false]);
@@ -31,8 +26,8 @@ export default function App() {
 
   const fireConversionEvent = () => {
     // 1. Disparo de Client-side (Navegador - Pixel)
-    if (window.fbq) {
-      window.fbq('track', 'Lead');
+    if ((window as any).fbq) {
+      (window as any).fbq('track', 'Lead');
     }
 
     // 2. Disparo Server-side (Conversions API)
