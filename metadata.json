@@ -1,6 +1,0 @@
-{
-  "name": "Restaura 4K - Restauração de Fotos",
-  "description": "Uma página de vendas e qualificação de leads para serviço de restauração de fotos antigas com IA.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
