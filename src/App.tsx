@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import ReactPixel from 'react-facebook-pixel';
 import { Check, ChevronDown, CheckCircle2, MessageCircle } from 'lucide-react';
 
 
@@ -6,6 +7,16 @@ import { Check, ChevronDown, CheckCircle2, MessageCircle } from 'lucide-react';
 export default function App() {
   const [checks, setChecks] = useState([false, false]);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  // Inicia o Pixel no exato momento que a plataforma Vercel carrega a página 
+  useEffect(() => {
+    const options = {
+      autoConfig: true, 
+      debug: false, 
+    };
+    ReactPixel.init('931435424509099', undefined, options);
+    ReactPixel.pageView();
+  }, []);
 
   const handleCheck = (index: number) => {
     const newChecks = [...checks];
@@ -26,9 +37,7 @@ export default function App() {
 
   const fireConversionEvent = () => {
     // 1. Disparo de Client-side (Navegador - Pixel)
-    if ((window as any).fbq) {
-      (window as any).fbq('track', 'Lead');
-    }
+    ReactPixel.track('Lead');
 
     // 2. Disparo Server-side (Conversions API)
     fetch('/api/conversions', {
