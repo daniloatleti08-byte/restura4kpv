@@ -1,0 +1,23 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+#
+# Initial commit
+#
+# Changes to be committed:
+#	new file:   .env.example
+#	new file:   .gitignore
+#	new file:   README.md
+#	new file:   index.html
+#	new file:   metadata.json
+#	new file:   package.json
+#	new file:   public/FOTO 1.png
+#	new file:   public/images (3).jpeg
+#	new file:   src/App.tsx
+#	new file:   src/index.css
+#	new file:   src/main.tsx
+#	new file:   tsconfig.json
+#	new file:   vite.config.ts
+#
